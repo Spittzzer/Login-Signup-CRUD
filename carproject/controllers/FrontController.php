@@ -20,17 +20,17 @@ if (isset($_GET["function"]) && ! empty($_GET["function"])) {
     }
 }
 
-function utf8ize($d) {
-    if (is_array($d) || is_object($d)) {
-        foreach ($d as &$v) $v = utf8ize($v);
-    } else {
-        $enc   = mb_detect_encoding($d);
+// function utf8ize($d) {
+//     if (is_array($d) || is_object($d)) {
+//         foreach ($d as &$v) $v = utf8ize($v);
+//     } else {
+//         $enc   = mb_detect_encoding($d);
 
-        $value = iconv($enc, 'UTF-8', $d);
-        return $value;
-    }
+//         $value = iconv($enc, 'UTF-8', $d);
+//         return $value;
+//     }
 
-    return $d;
-}
+//     return $d;
+// }
 
 echo json_encode($result);
